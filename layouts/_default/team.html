@@ -1,7 +1,4 @@
-{{ $image := resources.Get .Params.Image -}}
-{{ $image := $image.Resize "300x" }}
 <div class="card border-0 rounded-0 hover-shadow mb-5">
-    <img class="card-img-top rounded-0" src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
     <div class="card-body">
         <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
         <p>{{ .Params.Course }}</p>

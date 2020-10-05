@@ -1,5 +1,8 @@
 {{ define "main" }}
-{{ $image := resources.Get .Params.Image -}}
+{{ $page := . }}
+{{ $p := .Site.GetPage "static" }}
+{{ printf "%#v" $p.Resources }}
+{{ $image := $p.Resources.GetMatch $page.Params.Image }}
 {{ $image := $image.Resize "600x" }}
 
 <!-- teacher details -->

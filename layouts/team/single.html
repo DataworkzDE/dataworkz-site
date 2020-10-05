@@ -1,9 +1,11 @@
 {{ define "main" }}
 {{ $page := . }}
 {{ $p := .Site.GetPage "/static" }}
-{{ printf "%#v" $p.Resources }}
-{{ $image := $p.Resources.GetMatch $page.Params.Image }}
-{{ $image := $image.Resize "600x" }}
+{{ $image := resources.Get "images/joep_overview.jpg"}}
+{{ printf "%#v" $image }}
+
+{{/*  {{ $image := $p.Resources.GetMatch $page.Params.Image }}
+{{ $image := $image.Resize "600x" }}  */}}
 
 <!-- teacher details -->
 <section class="section">
@@ -108,5 +110,6 @@
     </div>
   </div>
 </section>
+
 
 {{ end }}
